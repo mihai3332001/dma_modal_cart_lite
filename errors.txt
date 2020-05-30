@@ -1,0 +1,9 @@
+error 101 - request failed : ajax import failed;
+error 102 - Wrong file extension! : wrong fil upload;
+error 103 - Widget Shopping Cart is not working! : data.fragments['div.dma_widget_shopping_cart_content'] not found
+Error 104 - Something is wrong! : attribute data product id nu exista
+Error 105 -  DMA WC Modal Cart requires Woocommerce to work! : woocommerce nu exista sau este dezactivat.
+
+
+
+
