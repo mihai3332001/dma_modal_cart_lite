@@ -31,9 +31,9 @@ jQuery(document).ready(function($) {
 		        nonce: dma_var_plugin.nonce
 		    }, 
 		    function(response) {
-		    	const filename = 'data.json';
+		    	const filename = 'export_dwmcl' + Date.now() + '.csv';
 		        let element = document.createElement('a');
-				element.setAttribute('href', 'data:application/json;charset=utf-8,' + encodeURIComponent(response));
+				element.setAttribute('href', 'data:text/csv;charset=utf-8,' + encodeURIComponent(response));
 				element.setAttribute('download', filename);
 
 				element.style.display = 'none';
@@ -51,7 +51,8 @@ jQuery(document).ready(function($) {
 	$('#dma_modal_cart_import').prop( "disabled", true );
 	dmanumca.prototype.DmaImportJson = function() {
 		var file = $('#dma_file').prop('files')[0];
-			if(file.type == 'application/json') {
+		//console.log(file);
+			if(file.type == 'application/vnd.ms-excel') {
 				var myformData = new FormData(); 		
         		myformData.append('file', file);
         		myformData.append('action', 'dmaImportJson');
@@ -66,7 +67,7 @@ jQuery(document).ready(function($) {
 		        contentType: false,
 		        data: myformData,
 		        success: function (data) {
-		        	console.log(data);
+		        	//console.log(data);
 		        	if(data.nothing) {
 		        		$('.dma_notice').addClass('dma_warning');
 		        		setTimeout(function(){ 

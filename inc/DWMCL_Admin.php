@@ -111,26 +111,30 @@ class DWMCL_Admin {
 		}
 		$get_options = get_option( $this->option_name, DWMCL_Utils::default_values() );
 
-		if(isset($_FILES)) {
-			$file = $_FILES['file'];
-		} else {
-			exit;
-		}
-
-		if($file['error'] !== 0) {
+		if($_FILES['error'] != 0) {
 			exit('Error file upload');
 		}
 
-		if(isset($file['name'])) {
-			$file['name'] = sanitize_file_name($file['name']);
+		if(isset($_FILES) && $this->check_file_type(sanitize_text_field(wp_unslash($_FILES['file']['name'])))) {
+
+			$overrides = array(
+				'test_form' => false,
+				'mimes'     => array(
+				'csv' => 'text/csv',
+				'txt' => 'text/plain',
+				)
+			);
+			$file = wp_handle_upload($_FILES['file'], $overrides);
+
+		} else {
+			exit('Wrong file upload');
 		}
 
-		$uploaded_file = $this->check_file_type($file);
+		if($file != false) {
+		$tmp_file = file_get_contents($file['url']);
 
-		if($uploaded_file != false) {
-				
-			$tmp_file = file_get_contents($file['tmp_name']);
 			$json_data = json_decode($tmp_file, true);
+
 				$message = array();
 					$merged_options = wp_parse_args( $json_data, $get_options );
 					$update = update_option($this->option_name, $merged_options);
@@ -139,7 +143,7 @@ class DWMCL_Admin {
 							'update' => __('Successfully update!'),
 						);
 						wp_send_json($message);
-					} else {
+					} else {					
 						$message = array(
 							'nothing' => __('Nothing to update!'),
 						);
@@ -152,15 +156,11 @@ class DWMCL_Admin {
 	public function check_file_type($file_name) {
 
 		$file_type = array(
-			'json' => 'application/json',
+			'csv' => 'text/csv',
+			'txt' => 'text/plain',
 		);
-
-		$overrides = array(
-				'test_form' => false,
-				'mimes'     => $file_type,
-		);
-
-		$filetype = wp_check_filetype( $file_name['name'], $file_type );
+		
+		$filetype = wp_check_filetype( $file_name, $file_type );
 		if ( in_array( $filetype['type'], $file_type, true ) ) {
 
 			return true;
