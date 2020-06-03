@@ -494,6 +494,9 @@ table:not( .has-background ) th, table:not( .has-background ) tbody td, table:no
 	.popupCart .woocommerce-mini-cart__buttons {
 		padding: 0 20px;
 		height: 100%;
+		display: flex;
+    	flex-wrap: wrap;
+    	justify-content: space-between;
 	}
 
 	.dma_modal_bottom.dma_modal_show .popupCart {
