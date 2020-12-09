@@ -9,7 +9,7 @@
  * Plugin Name:       DMA WOO Modal Cart Lite
  * Plugin URI:        https://dmaexpertit.com/
  * Description:       Woocommerce modal cart lite with linked products.
- * Version:           1.0.0
+ * Version:           1.0.2
  * Requires at least: 4.2
  * Requires PHP:      5.6
  * License:           GPL v2 or later

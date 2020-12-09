@@ -1,9 +1,9 @@
 === DMA WOO Modal Cart Lite ===
 Contributors: dmaexpertit
-Tags: popup cart, woocommerce cart, woocommerce popup cart, modal cart, woo cart, pop-up cart, shopping cart, linked products cart, cross-sells cart
+Tags: popup cart, woocommerce cart, ajax cart, woo ajax cart, woocommerce popup cart, modal cart, woo cart, pop-up cart, shopping cart, linked products cart, cross-sells cart
 Requires at least: 4.0
-Tested up to: 5.4.0
-Stable tag: 4.3
+Tested up to: 5.6
+Stable tag: 1.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,14 +13,20 @@ Modal cart for woocommerce that makes your cart looks great.
 == Description ==
 
 
-Dma modal cart is a mini-cart that adds products to the cart instantly without the need to reload the page.
-The premium version of dma modal cart allows you to customize almost every element.
-We have included some effects for the mini cart.
-You have the option to activate or deactivate the mini cart for a single product, but also for loop products.
-You can choose from linked products “cross-sells” or “up-sells” or create a category for linked products.
-Our modal is mobile-responsive.
-You have the option to export and import settings.
-Also, dma modal cart includes a preview to be able to view all your changes in real time.
+DMA Modal Cart Lite is a mini cart which you can add products to the cart without reloading the page. The lite version comes with some features that can help you.
+Even if it is not a premium version, you have the option to:
+- change the color of the modal,
+- change the background of the modal,
+- use many buttons,
+- change the opacity of the modal and much more.
+Also in the lite version is included an effect that generates the appearance of your shopping cart. 
+You have the option to choose which google font you want or even use your own font. The lite version is available for free by accessing the link below.
+Check out this [https://www.youtube.com/watch?v=mNevt8sy_Cw](https://www.youtube.com/watch?v=mNevt8sy_Cw)
+
+Demo:
+
+[http://demo.dmaexpertit.com/](http://demo.dmaexpertit.com/)
+
 
 
 == Installation ==
@@ -67,13 +73,17 @@ Yes. You can do that if you go to DMA Modal Cart Lite-->Button Count Cart Settin
 4. Modal Cart Center
 5. Modal Cart Right
 
-[youtube https://youtu.be/VKZUnbOSdBY]
+https://www.youtube.com/watch?v=mNevt8sy_Cw
  
 == Changelog ==
  
 = 1.0.0 = Released on 19 May 2020
+
+= 1.0.1 = Update to wordpress 5.5. Released on 16 August 2020
+
+= 1.0.2 = Update to wordpress 5.6. Released on 09 December 2020
  
 == Suggestions ==
 
-If you have suggestions about how to improve DMA Modal Cart Premium, you can [write us](mailto:plugins@dmaexpertit.com).
+If you have suggestions about how to improve DMA Modal Cart Premium, you can [write us](mailto:support@dmaexpertit.com).
  
